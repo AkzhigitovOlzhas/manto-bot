@@ -14,8 +14,9 @@ button2 = types.KeyboardButton("Анекдот")
 button3 = types.KeyboardButton("Мемы")
 button4 = types.KeyboardButton("Помощь")
 button5 = types.KeyboardButton("Музыка для души❤")
+button6 = types.KeyboardButton("Love калькулятор")
 
-markup.add(button1, button2, button3, button4,button5)
+markup.add(button1, button2, button3, button4,button5,button6)
 
 
 @bot.message_handler(commands=['start'])
@@ -70,6 +71,9 @@ def main_func(message):
             elif message.text == 'Факты':
                 bot.send_message(message.chat.id, 'Еще не готово')
                 bot.send_message(616639915, 'Еще не готово')
+            elif message.text == 'Love калькулятор':
+                bot.send_message(message.chat.id, 'Отправте боту сообщение "Love Любое_Имя + Любое_Имя"')
+                bot.send_message(616639915, 'Отправте боту сообщение "Love Любое_Имя + Любое_Имя"')
             elif message.text.lower() == 'мемы':
                 meme = 'http://admem.ru/content/images/' + str(random.randint(1391093637, 1391119653)) + '.jpg'
                 bot.send_photo(message.chat.id, meme)
@@ -109,7 +113,7 @@ def main_func(message):
             elif str(message.text).split()[0].lower() == 'love' or str(message.text).split()[0].lower() == 'лав':
                 try:
                     if str(message.text).split()[1].lower() == 'олжас' or str(message.text).split()[3].lower() == 'олжас':
-                        x = random.randint(70, 100)
+                        x = random.randint(200, 1000)
                         bot.send_message(message.chat.id, message.text.split()[1] + ' + ' +
                                          message.text.split()[3] + ' = ' + str(x) + '%❤')
                         bot.send_message(616639915, message.text.split()[1] + ' + ' +
